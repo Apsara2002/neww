@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddContactActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="371dp"
+        android:layout_height="379dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="188dp"
+        android:background="@drawable/orange_border" />
+
+    <TextView
+        android:id="@+id/addContactHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/view"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="89dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="414dp"
+        android:fontFamily="@font/poppins"
+        android:text="Add Contact"
+        android:textColor="@color/blue"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/saveButton"
+        android:layout_width="79dp"
+        android:layout_height="34dp"
+        android:layout_alignBottom="@+id/view"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-76dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="27dp"
+        android:layout_toEndOf="@+id/view"
+        android:src="@drawable/baseline_check_24" />
+
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/view"
+        android:layout_alignEnd="@+id/view"
+        android:layout_alignBottom="@+id/view"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="262dp"
+        android:background="@drawable/orange_border"
+        android:fontFamily="@font/poppins"
+        android:hint="Enter the name"
+        android:maxLines="1"
+        android:padding="12dp"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/numberEditText"
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/view"
+        android:layout_alignEnd="@+id/view"
+        android:layout_alignBottom="@+id/view"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="167dp"
+        android:background="@drawable/orange_border"
+        android:fontFamily="@font/poppins"
+        android:hint="Enter the Phone number"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:padding="12dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/view"
+        android:layout_alignTop="@+id/saveButton"
+        android:layout_alignBottom="@+id/view"
+        android:layout_marginStart="206dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="37dp"
+        android:layout_toStartOf="@+id/saveButton"
+        android:fontFamily="@font/poppins"
+        android:text="Save Contact"
+        android:textColor="@color/blue"
+        android:textSize="15sp" />
+
+</RelativeLayout>
