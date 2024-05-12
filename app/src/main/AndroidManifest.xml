@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Neww4"
         tools:targetApi="31">
         <activity
+            android:name=".UpdateContactActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddContactActivity"
             android:exported="false" />
         <activity

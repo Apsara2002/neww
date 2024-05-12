@@ -59,5 +59,31 @@ class ContactDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABA
         return contactsList
     }
 
+    fun updateContact(contact: Contact){
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put(COLUMN_NAME,contact.name)
+            put(COLUMN_PHONE,contact.number)
+        }
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(contact.id.toString())
+        db.update(TABLE_NAME,values,whereClause,whereArgs)
+        db.close()
+    }
+
+    fun getConatctByID(contactId: Int): Contact{
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID = $contactId"
+        val cursor = db.rawQuery(query,null)
+        cursor.moveToFirst()
+
+        val id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
+        val name = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NAME))
+        val phone = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PHONE))
+
+        cursor.close()
+        db.close()
+        return Contact(id,name,phone)
+    }
 
 }
