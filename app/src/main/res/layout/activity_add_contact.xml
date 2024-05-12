@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     tools:context=".AddContactActivity">
 
     <View
@@ -29,10 +30,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="89dp"
-        android:layout_marginEnd="130dp"
-        android:layout_marginBottom="414dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="169dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="334dp"
         android:fontFamily="@font/poppins"
         android:text="Add Contact"
         android:textColor="@color/blue"
@@ -57,9 +58,9 @@
         android:layout_alignStart="@+id/view"
         android:layout_alignEnd="@+id/view"
         android:layout_alignBottom="@+id/view"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="262dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="202dp"
         android:background="@drawable/orange_border"
         android:fontFamily="@font/poppins"
         android:hint="Enter the name"
@@ -74,9 +75,9 @@
         android:layout_alignStart="@+id/view"
         android:layout_alignEnd="@+id/view"
         android:layout_alignBottom="@+id/view"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="167dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="112dp"
         android:background="@drawable/orange_border"
         android:fontFamily="@font/poppins"
         android:hint="Enter the Phone number"
@@ -101,5 +102,36 @@
         android:text="Save Contact"
         android:textColor="@color/blue"
         android:textSize="15sp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie2"
+        android:layout_width="339dp"
+        android:layout_height="37dp"
+
+        android:layout_above="@+id/titleEditText"
+        android:layout_alignStart="@+id/view"
+        android:layout_alignEnd="@+id/view"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="38dp"
+        android:elevation="5dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/line" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie3"
+        android:layout_width="246dp"
+        android:layout_height="220dp"
+        android:layout_above="@+id/titleEditText"
+        android:layout_alignStart="@+id/view"
+        android:layout_alignEnd="@+id/view"
+        android:layout_marginStart="-31dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="-314dp"
+        android:elevation="5dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/addcontact" />
 
 </RelativeLayout>

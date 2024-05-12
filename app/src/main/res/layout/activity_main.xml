@@ -22,7 +22,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/contactsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="558dp"
+        android:layout_height="604dp"
         android:layout_below="@id/contactsHeading"
         android:layout_marginTop="71dp"
         android:padding="16dp" />
