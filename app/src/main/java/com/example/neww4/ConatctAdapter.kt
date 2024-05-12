@@ -38,6 +38,7 @@ class ConatctAdapter(private var cotacts:List<Contact>,context: Context) : Recyc
             }
             holder.itemView.context.startActivity(intent)
         }
+        //delete
         holder.deleteButton.setOnClickListener {
             db.deleteContact(contact.id)
             refreshData(db.getAllContacts())

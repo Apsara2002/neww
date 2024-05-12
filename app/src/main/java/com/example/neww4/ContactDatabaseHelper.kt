@@ -87,6 +87,7 @@ class ContactDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABA
         return Contact(id,name,phone)
     }
 
+    //delete
     fun deleteContact(contactId: Int){
         val db = writableDatabase
         val whereClause = "$COLUMN_ID = ?"
