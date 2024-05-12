@@ -87,4 +87,12 @@ class ContactDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABA
         return Contact(id,name,phone)
     }
 
+    fun deleteContact(contactId: Int){
+        val db = writableDatabase
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(contactId.toString())
+        db.delete(TABLE_NAME,whereClause,whereArgs)
+        db.close()
+    }
+
 }

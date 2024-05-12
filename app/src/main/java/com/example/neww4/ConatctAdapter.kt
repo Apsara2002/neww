@@ -7,14 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class ConatctAdapter(private var cotacts:List<Contact>,context: Context) : RecyclerView.Adapter<ConatctAdapter.ContactViewHolder>() {
 
+    private val db:ContactDatabaseHelper = ContactDatabaseHelper(context)
     class ContactViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
         val titleTextView :TextView= itemView.findViewById(R.id.titleTextView)
         val numberTextView :TextView= itemView.findViewById(R.id.numberTextView)
         val updateButton :ImageView= itemView.findViewById(R.id.updateButton)
+        val deleteButton : ImageView = itemView.findViewById(R.id.deleteButton)
     }
     //////
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
@@ -34,6 +37,11 @@ class ConatctAdapter(private var cotacts:List<Contact>,context: Context) : Recyc
                 putExtra("contact_id",contact.id)
             }
             holder.itemView.context.startActivity(intent)
+        }
+        holder.deleteButton.setOnClickListener {
+            db.deleteContact(contact.id)
+            refreshData(db.getAllContacts())
+            Toast.makeText(holder.itemView.context,"Contact Deleted",Toast.LENGTH_SHORT).show()
         }
     }
 
