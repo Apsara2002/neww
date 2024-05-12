@@ -22,9 +22,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/contactsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:padding="16dp"/>
+        android:layout_height="558dp"
+        android:layout_below="@id/contactsHeading"
+        android:layout_marginTop="71dp"
+        android:padding="16dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addButton"
@@ -32,12 +33,28 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/blue"
-        android:src="@drawable/baseline_add_24"
         android:contentDescription="@string/add_button_description"
-        app:tint="@color/white"/>
+        android:src="@drawable/baseline_add_24"
+        app:tint="@color/white" />
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contactsHeading"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:iconifiedByDefault="false"
+        app:searchHintIcon="@null"
+        app:searchIcon="@drawable/searchh"
+        app:closeIcon="@drawable/baseline_clear_24"
+        android:focusable="false"
+        android:background="@drawable/search_bkg"
+        app:queryHint="Search contacts..."
+        app:layout_constraintTop_toBottomOf="@id/contactsHeading"/>
 
 </RelativeLayout>
