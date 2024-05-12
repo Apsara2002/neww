@@ -23,6 +23,7 @@ class UpdateContactActivity : AppCompatActivity() {
             return
         }
 
+        //get id of contact
         val contact = db.getConatctByID(contactId)
         binding.UpdateTitleEditText.setText(contact.name)
         binding.UpdateNumberEditText.setText(contact.number)

@@ -16,7 +16,7 @@ class ConatctAdapter(private var cotacts:List<Contact>,context: Context) : Recyc
         val numberTextView :TextView= itemView.findViewById(R.id.numberTextView)
         val updateButton :ImageView= itemView.findViewById(R.id.updateButton)
     }
-    ////
+    //////
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
         val  view = LayoutInflater.from(parent.context).inflate(R.layout.contact_item,parent,false)
         return ContactViewHolder(view)

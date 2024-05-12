@@ -71,6 +71,7 @@ class ContactDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABA
         db.close()
     }
 
+
     fun getConatctByID(contactId: Int): Contact{
         val db = readableDatabase
         val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID = $contactId"
