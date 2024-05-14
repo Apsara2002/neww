@@ -36,6 +36,9 @@ class UpdateContactActivity : AppCompatActivity() {
             finish()
             Toast.makeText(this,"Changes Saved",Toast.LENGTH_SHORT).show()
         }
+        binding.back.setOnClickListener {
+            onBackPressed()
+        }
 
     }
 }

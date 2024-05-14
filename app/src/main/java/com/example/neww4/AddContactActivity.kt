@@ -32,5 +32,9 @@ class AddContactActivity : AppCompatActivity() {
                 Toast.makeText(this,"Please enter a valid 10 digit phone number",Toast.LENGTH_SHORT).show()
             }
         }
+
+        binding.back.setOnClickListener {
+            onBackPressed()
+        }
     }
 }
