@@ -1,5 +1,6 @@
 package com.example.neww4
 
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -40,15 +41,29 @@ class ConatctAdapter(private var cotacts:List<Contact>,context: Context) : Recyc
         }
         //delete
         holder.deleteButton.setOnClickListener {
-            db.deleteContact(contact.id)
-            refreshData(db.getAllContacts())
-            Toast.makeText(holder.itemView.context,"Contact Deleted",Toast.LENGTH_SHORT).show()
+            showConfirmationDialog(contact.id,holder.itemView.context)
         }
     }
 
     fun refreshData(newContacts: List<Contact>){
         cotacts = newContacts
         notifyDataSetChanged()
+    }
+
+    private fun showConfirmationDialog(contactId:Int,context: Context){
+        val alertDialogBuilder = AlertDialog.Builder(context)
+        alertDialogBuilder.setTitle("Confirmation")
+        alertDialogBuilder.setMessage("Are you sure you want to delete this contact?")
+        alertDialogBuilder.setPositiveButton("Yes"){ _, _ ->
+            db.deleteContact(contactId)
+            refreshData(db.getAllContacts())
+            Toast.makeText(context,"Contact Deleted Successfully",Toast.LENGTH_SHORT).show()
+        }
+        alertDialogBuilder.setNegativeButton("No"){dialog, _ ->
+            dialog.dismiss()
+        }
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.show()
     }
 
 }
